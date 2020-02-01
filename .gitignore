@@ -69,3 +69,7 @@ CatBoyz/Library/
 CatBoyz/Temp/
 
 CatBoyz/Logs/
+*.meta
+*.cache
+*.cache
+*.meta
