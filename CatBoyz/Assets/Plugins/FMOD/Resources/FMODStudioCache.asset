@@ -14,12 +14,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\br854946\Documents\CatBoys\CatBoyz\FMOD\catBoyz\Build\Desktop\Master.bank
   SubDir: 
-  lastModified: 637161496851617867
+  lastModified: 637161793617206154
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1000
+    Value: 995360
   Exists: 1
+--- !u!114 &-4391487387332486804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/kiss_1
+  m_EditorClassIdentifier: 
+  Path: event:/kiss_1
+  guid: 3cc5c4d598d26344bdc9430a5b61dec4
+  Banks:
+  - {fileID: -7654214559265145585}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &-324065930154041571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/level_music
+  m_EditorClassIdentifier: 
+  Path: event:/level_music
+  guid: f1d738c0f187d34583ba65dff08ae1e7
+  Banks:
+  - {fileID: -7654214559265145585}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 76800
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,14 +81,40 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 4222358100706107126}
   - {fileID: -7654214559265145585}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 729683587680374907}
+  - {fileID: -4391487387332486804}
+  - {fileID: -324065930154041571}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7654214559265145585}
   StringsBanks:
   - {fileID: 4222358100706107126}
-  stringsBankWriteTime: 637161496851682857
+  stringsBankWriteTime: 637161793617206154
   cacheVersion: 3
+--- !u!114 &729683587680374907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/kiss_2
+  m_EditorClassIdentifier: 
+  Path: event:/kiss_2
+  guid: 30ef2ae1284f0549b0dad3696e9e29ca
+  Banks:
+  - {fileID: -7654214559265145585}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &4222358100706107126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,9 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\br854946\Documents\CatBoys\CatBoyz\FMOD\catBoyz\Build\Desktop\Master.strings.bank
   SubDir: 
-  lastModified: 637161496851682857
+  lastModified: 637161793617206154
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 688
+    Value: 830
   Exists: 1
