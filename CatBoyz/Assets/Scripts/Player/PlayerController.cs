@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    public float offset;
+
     public float customGravity = 20;
     public float speed;
     public float grappleSpeed;
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDir;
     private Vector3 grapplePos;
     private Vector3 grapplePosSmoothed;
+
+    public Transform rotationDir;
 
     void Awake ()
     {
@@ -56,6 +60,13 @@ public class PlayerController : MonoBehaviour
 
             RigidbodyUpdate();
         }
+
+        RaycastHit hit;
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 diff = (mousePos - playerScreenPos);
+        float angle = (Mathf.Atan2(diff.y, -diff.x) * 180 / Mathf.PI) - 90;
+        rotationDir.eulerAngles = new Vector3(0, angle, 0);
     }
 
     void RigidbodyUpdate()

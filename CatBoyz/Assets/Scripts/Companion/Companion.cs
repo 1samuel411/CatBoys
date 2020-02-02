@@ -54,10 +54,12 @@ public class Companion : MonoBehaviour
         {
             if (hits[i].transform.tag == "Enemy")
             {
-                thingsToHit.Add(hits[i].transform);
+                if(thingsToHit.Count <= 4)
+                    thingsToHit.Add(hits[i].transform);
             }
         }
         hit = true;
+        transform.eulerAngles = Vector3.zero;
         thingsToHit = thingsToHit.OrderBy(x => Vector2.Distance(transform.position, x.transform.position)).ToList();
     }
 }

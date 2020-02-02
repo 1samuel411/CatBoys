@@ -585,7 +585,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1133,36 +1133,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1643287427345556705, guid: e1b0d6d848e846040aeda44ba6cbabee,
-        type: 3}
-      propertyPath: companionAttackPrefab
-      value: 
-      objectReference: {fileID: 8457910554765783915, guid: 0167db9fdd40cfb47b209c03a29dcbd3,
-        type: 3}
-    - target: {fileID: 1643287427345556705, guid: e1b0d6d848e846040aeda44ba6cbabee,
-        type: 3}
-      propertyPath: velocityClamp.x
+    - target: {fileID: 1429149647, guid: e1b0d6d848e846040aeda44ba6cbabee, type: 3}
+      propertyPath: bulletOffset.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1643287427345556705, guid: e1b0d6d848e846040aeda44ba6cbabee,
-        type: 3}
-      propertyPath: velocityClamp.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643287427345556705, guid: e1b0d6d848e846040aeda44ba6cbabee,
-        type: 3}
-      propertyPath: timeClamp.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643287427345556705, guid: e1b0d6d848e846040aeda44ba6cbabee,
-        type: 3}
-      propertyPath: timeClamp.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643287427345556705, guid: e1b0d6d848e846040aeda44ba6cbabee,
-        type: 3}
-      propertyPath: initAngle
-      value: 30
+    - target: {fileID: 1429149647, guid: e1b0d6d848e846040aeda44ba6cbabee, type: 3}
+      propertyPath: bulletOffset.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b0d6d848e846040aeda44ba6cbabee, type: 3}

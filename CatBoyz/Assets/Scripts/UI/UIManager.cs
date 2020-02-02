@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject winMenu;
     public GameObject loseMenu;
+    public GameObject blackPanel;
+
+    public Animator animator;
 
     public GameObject player;
     private PlayerController playerController;
@@ -41,6 +44,15 @@ public class UIManager : MonoBehaviour
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
         }
+    }
+
+    public void OpenMainMenu()
+    {
+        animator = blackPanel.GetComponent<Animator>();
+
+        bool isOpen = animator.GetBool("open");
+
+        animator.SetBool("open", !isOpen);
     }
 
     /*public void LoseGame()
