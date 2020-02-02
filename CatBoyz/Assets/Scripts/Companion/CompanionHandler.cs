@@ -19,15 +19,14 @@ public class CompanionHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            //SpawnCompanionAttack(transform.position + (Vector3.up * -4));
-
+            SpawnCompanionAttack(transform.position + (transform.right * -2));
+            return;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 99999f))
             {
                 SpawnCompanionAttack(hit.point);
             }
-            return;
         }
     }
 
