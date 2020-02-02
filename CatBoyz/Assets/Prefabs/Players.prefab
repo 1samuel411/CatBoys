@@ -77,7 +77,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1127138897
@@ -237,7 +237,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2115732165
@@ -400,7 +400,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89548992a404faf42ace7f4ea6fc0cd5, type: 2}
+  - {fileID: 2100000, guid: 91017290f11f23d47822b19d1c638c56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -524,13 +524,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 946567962840323404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e40c3a9459b78d44b0aefe607449255, type: 3}
+  m_Script: {fileID: 11500000, guid: f4a23d1bb93de3048af337d440632274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  companionAttackPrefab: {fileID: 8457910554765783915, guid: 0167db9fdd40cfb47b209c03a29dcbd3,
+  fireRate: 0.2
+  bulletPrefab: {fileID: 4982446602340647519, guid: 0171fb5f113060c4399be02beda95a39,
     type: 3}
-  initAngle: 30
-  yOffset: 2.2
+  directionObj: {fileID: 2115732166}
+  bulletOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &1429149647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,14 +541,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 946567962840323404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6d3f6c17429bc49b91ff931d57ece5, type: 3}
+  m_Script: {fileID: 11500000, guid: c8ee65c82ec0fb740890f3c0860f367b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.2
-  bulletPrefab: {fileID: 4982446602340647519, guid: 217839194a59ae5408ab0b2369f4227c,
+  companionAttackPrefab: {fileID: 8457910554765783915, guid: 2670618d7525a5349b63090dbf8a2396,
     type: 3}
-  directionObj: {fileID: 2115732166}
-  bulletOffset: {x: 0, y: 1, z: 1}
+  initAngle: 60
+  yOffset: 0
 --- !u!1 &946567963059574326
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,10 +635,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 946567962840323400}
     m_Modifications:
-    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
-      propertyPath: m_Name
-      value: BlobShadowProjector
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -682,6 +678,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_Name
+      value: BlobShadowProjector
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_FieldOfView
