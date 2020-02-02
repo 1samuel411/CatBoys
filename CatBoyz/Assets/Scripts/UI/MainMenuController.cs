@@ -7,6 +7,15 @@ public class MainMenuController : MonoBehaviour
     public GameObject characterSelect;
     public GameObject optionsMenu;
     public GameObject creditsMenu;
+    public GameObject companionImage;
+
+    public void Update()
+    {
+        if(this.gameObject.activeSelf == true)
+        {
+            companionImage.SetActive(false);
+        }
+    }
     public void StartGame()
     {
         this.gameObject.SetActive(false);
