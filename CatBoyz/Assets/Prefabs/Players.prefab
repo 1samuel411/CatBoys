@@ -530,7 +530,7 @@ MonoBehaviour:
   companionAttackPrefab: {fileID: 8457910554765783915, guid: 0167db9fdd40cfb47b209c03a29dcbd3,
     type: 3}
   initAngle: 30
-  yOffset: 0
+  yOffset: 2.2
 --- !u!114 &1429149647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,7 +547,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4982446602340647519, guid: 217839194a59ae5408ab0b2369f4227c,
     type: 3}
   directionObj: {fileID: 2115732166}
-  bulletOffset: {x: 0, y: 0, z: 0}
+  bulletOffset: {x: 0, y: 1, z: 1}
 --- !u!1 &946567963059574326
 GameObject:
   m_ObjectHideFlags: 0

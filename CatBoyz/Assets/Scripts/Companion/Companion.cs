@@ -12,12 +12,15 @@ public class Companion : MonoBehaviour
     public float attackSpeed;
     public float offset;
 
+    private float timeHitting;
+
     private bool hit = false;
 
     private List<Transform> thingsToHit = new List<Transform>();
 
     void Start()
     {
+        Physics.IgnoreCollision(GetComponent<Collider>(), PlayerManager.instance.player.GetComponent<Collider>(), true);
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -29,13 +32,16 @@ public class Companion : MonoBehaviour
 
         if(thingsToHit.Count > 0)
         {
-            if((transform.position - (thingsToHit[0].position + (Vector3.forward * offset))).magnitude <= 0.5f)
+            transform.position = Vector3.Lerp(transform.position, thingsToHit[0].position + (Vector3.forward * offset), attackSpeed * Time.deltaTime);
+            if ((transform.position - (thingsToHit[0].position + (Vector3.forward * offset))).magnitude <= 0.25f)
             {
-                thingsToHit.RemoveAt(0);
-            }
-            else
-            {
-                transform.position = Vector3.Lerp(transform.position, thingsToHit[0].position + (Vector3.forward * offset), attackSpeed * Time.deltaTime);
+                if (timeHitting > .15f)
+                {
+                    timeHitting = 0;
+                    thingsToHit.RemoveAt(0);
+                }
+                else
+                    timeHitting += Time.deltaTime;
             }
         }
         else

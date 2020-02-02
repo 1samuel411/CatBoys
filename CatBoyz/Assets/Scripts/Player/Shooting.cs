@@ -31,7 +31,8 @@ public class Shooting : MonoBehaviour
             yield break;
         Vector3 offset = directionObj.TransformDirection(bulletOffset);
         canShoot = false;
-        Instantiate(bulletPrefab, transform.position + (offset), directionObj.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + (offset), directionObj.rotation);
+        bullet.transform.eulerAngles = new Vector3(0, bullet.transform.eulerAngles.y + Random.Range(-5.0f, 5.0f), 0);
         yield return new WaitForSeconds(fireRate + Random.Range(-0.05f, 0.05f));
         canShoot = true;
     }
