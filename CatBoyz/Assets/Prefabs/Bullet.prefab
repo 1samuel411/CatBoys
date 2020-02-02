@@ -188,10 +188,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982446602340647519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e55716962d5fdc48a7bf3e44739874a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bae4f9fcec7c5a4f8ca42bab845d5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
   decalPrefab: {fileID: 1116629939102564806, guid: 1613d321c1ac5f0488efe66f478ab290,
     type: 3}
 --- !u!65 &7174593807361815160

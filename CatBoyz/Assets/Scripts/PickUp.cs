@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    public GameObject player;
     public int ammo = 15;
     private Shooting shootingScript;
 
     private void Start()
     {
-        shootingScript = player.GetComponent<Shooting>();
+        shootingScript = PlayerManager.instance.player.GetComponent<Shooting>();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -51,7 +51,7 @@ public class Companion : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         thingsToHit = new List<Transform>();
         rigidbody.isKinematic = true;

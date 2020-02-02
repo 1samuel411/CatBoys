@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 grapplePos;
     private Vector3 grapplePosSmoothed;
 
+    public Animator animatorA, animatorB;
+
     public Transform rotationDir;
 
     void Awake ()
@@ -45,8 +47,23 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(characterControllerMode)
+        float speed = 0;
+        if (characterControllerMode)
         {
+            speed = characterController.velocity.magnitude;
+            if (characterController.velocity.z < -0.1f)
+            {
+                front = true;
+            }
+            else if (characterController.velocity.z > 0.1f)
+            {
+                front = false;
+            }
+            else
+            {
+                if(Mathf.Abs(characterController.velocity.x) > 0.2f)
+                    front = true;
+            }
             characterController.enabled = true;
             rigidbody.isKinematic = true;
             collider.enabled = false;
@@ -55,6 +72,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            front = true;
+            speed = rigidbody.velocity.magnitude;
             characterController.enabled = false;
             rigidbody.isKinematic = false;
             collider.enabled = true;
@@ -62,6 +81,10 @@ public class PlayerController : MonoBehaviour
             RigidbodyUpdate();
         }
 
+        animatorA.SetBool("Front", front);
+        animatorB.SetBool("Front", front);
+        animatorA.SetFloat("Speed", speed);
+        animatorB.SetFloat("Speed", speed);
         RaycastHit hit;
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -143,6 +166,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private bool front;
     void CharacterControllerUpdate()
     {
         lineRenderer.positionCount = 0;
