@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{0a1d30ce-bf7e-4fdb-b6a2-869473e47542}">
+		<property name="assetPath">
+			<value>Misc/grapple_hit.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{276bb01a-b650-43b4-b1a0-ed9da0059213}</destination>
+		</relationship>
+	</object>
+</objects>
