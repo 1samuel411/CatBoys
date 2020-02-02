@@ -8,7 +8,7 @@ public class CompanionHandler : MonoBehaviour
     public GameObject companionAttackPrefab;
 
     public float initAngle = 60;
-    public float xOffset;
+    public float yOffset;
 
     void Start()
     {
@@ -17,21 +17,24 @@ public class CompanionHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
+            //SpawnCompanionAttack(transform.position + (Vector3.up * -4));
+
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 99999f))
             {
                 SpawnCompanionAttack(hit.point);
             }
+            return;
         }
     }
 
     void SpawnCompanionAttack(Vector3 targetPos)
     {
         Vector3 camPos = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, targetPos.z - Camera.main.transform.position.z));
-        Vector3 spawnPos = new Vector3(camPos.x - 5, Camera.main.transform.position.y - 5, targetPos.z);
+        Vector3 spawnPos = new Vector3(camPos.x - 3, Camera.main.transform.position.y - yOffset, targetPos.z);
         float turretAngle = initAngle; //Turret is 10 deg tilted up (350 in inspector)
         float g = Physics.gravity.magnitude; //G force
         float y = (Camera.main.transform.position.y - 5) + targetPos.y; //Height of the target

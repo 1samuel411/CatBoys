@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb09da23c79344e92603f12a5b2b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 4
+  attackRadius: 6
   attackSpeed: 10
   offset: -0.2
 --- !u!54 &8457910554765783916
