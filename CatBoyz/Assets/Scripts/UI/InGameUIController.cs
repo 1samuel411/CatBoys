@@ -6,20 +6,24 @@ using UnityEngine.UI;
 public class InGameUIController : MonoBehaviour
 {
     public GameObject companionPopUp;
-    public GameObject companionImage;
+    public GameObject characterSelect;
+    public GameObject companionImageA;
+    public GameObject companionImageB;
     public GameObject player;
     public Text ammoText;
     public bool gotCompanion = false;
     private PlayerController playerController;
     private Shooting shootingController;
+    private CharacterSelectController characterSelectController;
 
-    public void Awake()
+    private void Start()
     {
-        companionImage.SetActive(false);
+        characterSelectController = characterSelect.GetComponent<CharacterSelectController>();
     }
     private void Update()
     {
         CheckForCompanion();
+        CreateCharacterUI();
         UpdateAmmo();
     }
 
@@ -36,5 +40,21 @@ public class InGameUIController : MonoBehaviour
     public void UpdateAmmo()
     {
         ammoText.text = shootingController.currAmmo + "/100";
+    }
+
+    public void CreateCharacterUI()
+    {
+        if(characterSelectController.characterChoice == 0)
+        {
+            companionImageA.SetActive(true);
+            companionImageB.SetActive(false);
+            characterSelectController.characterChoice = -9999;
+        }
+        else if(characterSelectController.characterChoice == 1)
+        {
+            companionImageA.SetActive(false);
+            companionImageB.SetActive(true);
+            characterSelectController.characterChoice = -9999;
+        }
     }
 }
