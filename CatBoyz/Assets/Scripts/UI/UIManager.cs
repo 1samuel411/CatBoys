@@ -49,6 +49,7 @@ public class UIManager : MonoBehaviour
         {
             inGameMenu.SetActive(false);
             loseMenu.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -58,6 +59,7 @@ public class UIManager : MonoBehaviour
         {
             inGameMenu.SetActive(false);
             winMenu.SetActive(true);
+            Time.timeScale = 0;
         }
     }*/
 }

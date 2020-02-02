@@ -73,3 +73,6 @@ CatBoyz/Logs/
 *.cache
 *.cache
 *.meta
+
+CatBoyz/obj/Debug/
+CatBoyz/Debug/
