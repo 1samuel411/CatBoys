@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject characterSelect;
-    public GameObject optionsMenu;
+    public GameObject controlsMenu;
     public GameObject creditsMenu;
     public GameObject companionImage;
 
@@ -25,7 +25,7 @@ public class MainMenuController : MonoBehaviour
     public void Options()
     {
         this.gameObject.SetActive(false);
-        optionsMenu.SetActive(true);
+        controlsMenu.SetActive(true);
     }
 
     public void Credits()
