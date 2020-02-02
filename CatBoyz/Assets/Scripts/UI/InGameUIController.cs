@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameUIController : MonoBehaviour
 {
     public GameObject companionPopUp;
     public GameObject companionImage;
     public GameObject player;
+    public Text ammoText;
     public bool gotCompanion = false;
     private PlayerController playerController;
+    private Shooting shootingController;
 
     public void Awake()
     {
@@ -17,6 +20,7 @@ public class InGameUIController : MonoBehaviour
     private void Update()
     {
         CheckForCompanion();
+        UpdateAmmo();
     }
 
     public void CheckForCompanion()
@@ -28,6 +32,9 @@ public class InGameUIController : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-    //updates ammo text
-    //updates heart health
+
+    public void UpdateAmmo()
+    {
+        ammoText.text = shootingController.currAmmo + "/100";
+    }
 }
