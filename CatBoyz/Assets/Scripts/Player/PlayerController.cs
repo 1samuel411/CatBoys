@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private bool grappling;
     private bool canGrapple = true;
+    private bool grappled;
 
     private CharacterController characterController;
     private new Rigidbody rigidbody;
@@ -114,8 +115,11 @@ public class PlayerController : MonoBehaviour
 
     void Grapple(Vector3 pos)
     {
+        if (grappled)
+            return;
         if (!canGrapple)
             return;
+        grappled = true;
         grappling = true;
         grapplePosSmoothed = transform.position;
         grapplePos = pos;
@@ -143,6 +147,9 @@ public class PlayerController : MonoBehaviour
     {
         lineRenderer.positionCount = 0;
         ListenForGrapple();
+        if (grappling)
+            return;
+
         moveDir.x = Input.GetAxis("Horizontal");
         moveDir.z = Input.GetAxis("Vertical");
         float y = moveDir.y;
@@ -152,6 +159,7 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded)
         {
             canGrapple = true;
+            grappled = false;
             moveDir.y = 0;
             moveDir *= speed;
 
